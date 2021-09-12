@@ -1,1 +1,6 @@
-# data_structure_and_algorithm_in_javascript
+# algo-js
+Leetcode data structure and algorithm practices solution in javascript.
+
+## Binary tree
+(TODO)
+
