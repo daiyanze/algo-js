@@ -59,3 +59,23 @@ var maxPathSum = function(root) {
   return sum
 }
 
+function maxPathSum(root) {
+  let max = -Infinity
+
+  function dfs(node) {
+    if (!node) return 0
+
+    const left = Math.max(dfs(node.left), 0)
+
+    const right = Math.max(dfs(node.right), 0)
+
+    max = Math.max(node.value + left + right, max)
+
+    return Math.max(left, right) + node.value
+  }
+
+  dfs(root)
+
+  return max
+}
+
