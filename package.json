@@ -1,0 +1,29 @@
+{
+  "name": "algo-js",
+  "version": "1.0.0",
+  "description": "A study plan to master data structure and algorithm in Javascript",
+  "main": "index.js",
+  "bin": {
+    "algotest": "bin/algotest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daiyanze/algo-js.git"
+  },
+  "keywords": [
+    "algorithm",
+    "data",
+    "structure",
+    "learn",
+    "algo"
+  ],
+  "author": "Yanze Dai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daiyanze/algo-js/issues"
+  },
+  "homepage": "https://github.com/daiyanze/algo-js#readme",
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^5.1.1"
+  }
+}
