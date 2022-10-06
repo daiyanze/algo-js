@@ -16,7 +16,9 @@ for (let i = 0; i < tests.length; i++) {
   }
 
   for (let j = 0; j < argTypes.length; j++) {
-    // FIXME: Into strategy pattern
+    // FIXME: 
+    // 1. Into strategy pattern
+    // 2. circled list and intersected lists are not able to be generated
     if (argTypes[j] == 'ListNode[]') {
       const list = []
       for (let t of tests[i][j]) {
@@ -49,11 +51,12 @@ for (let i = 0; i < tests.length; i++) {
     tests[i].forEach(t => console.log(t))
 
     if (returnType == 'ListNode') {
-      console.log()
-      console.log('Output:')
-      console.log(res ? res.toArray(): [])
-      console.log()
-      console.log()
+      res = res ? res.toArray() : []
     }
+    console.log()
+    console.log('Output:')
+    console.log(res)
+    console.log()
+    console.log()
   }
 }
