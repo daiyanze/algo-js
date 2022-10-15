@@ -28,7 +28,23 @@ function traverse(head) {
 }
 ```
 
-### Two pointers / Slow-fast pointers
+### Remove node
+
+```js
+function removeNode(head, node) {
+  let cur = head
+
+  while (cur.next) {
+    if (cur.next == node) {
+      let next = cur.next.next
+      cur.next = next
+      cur = next
+    }
+  }
+}
+```
+
+### Two pointers: Slow-fast pointers
 
 If the linked-list length is even number, then fast pointer will be `null`. If odd, it's the last node.
 
