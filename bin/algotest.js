@@ -27,6 +27,10 @@ for (let i = 0; i < tests.length; i++) {
       convertedArgs[i].push(list)
     } else if (argTypes[j] == 'ListNode') {
       convertedArgs[i].push(new LinkedList(tests[i][j]))
+    } else if (argTypes[j] == 'Array') {
+      convertedArgs[i].push(Array.from(tests[i][j]))
+    } else if (argTypes[j] == 'Object') {
+      convertedArgs[i].push(Object.assign({}, tests[i][j]))
     } else {
       convertedArgs[i].push(tests[i][j])
     }
