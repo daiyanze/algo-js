@@ -1,6 +1,13 @@
 /**
  * We use a hashmap to store the calculated result (target - current number).
  * Then we iterate the array of numbers, and find if there's one match.
+ *
+ * Time complexity: O(n)
+ * Loop once 
+ *
+ * Space Complexity: O(n)
+ * We need to store the target elements in a hashmap
+ *
  */
 
 
