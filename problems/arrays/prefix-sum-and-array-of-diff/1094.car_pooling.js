@@ -1,4 +1,25 @@
 /**
+ * Steps:
+ *   1. Create a DiffArray class which includes methods of "adding values" and "gettings result"
+ *   2. Create instance of DiffArray with given input: new DiffArray(input)
+ *   3. Mutate the range diff-value (i, j) by the target value: diff[i] + target_value / diff[j] + target_value
+ *   4. Get result
+ * 
+ * Challenges:
+ *   1. The first element of a diff-array is the first element of input array
+ *   2. Condition of whether to mutate the target element in range (i, j):
+ *      If the target index is smaller than the element length, then we should deduct the number of that diff[j]
+ * 
+ * 
+ * Time complexity: O(n) / O(1)
+ * We only need to loop once to create an array of difference once. And then getting result is constant time
+ *
+ * Space Complexity: O(n)
+ * We need to store the calulated "difference" in an array which will be used for getting result later
+ *
+ */
+
+/**
  * @param {number[][]} trips
  * @param {number} capacity
  * @return {boolean}

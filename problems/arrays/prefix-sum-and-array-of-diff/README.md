@@ -41,5 +41,32 @@ NumMatrix.prototype.sumRegion = function(x1, y1, x2, y2) {
 ## Array of difference
 
 ```js
+function DiffArray(nums) {
+  this.diff = new Array(nums.length).fill(0)
+  this.diff[0] = nums[0]
 
+  for (let i = 1; i < nums.length; i++) {
+    this.diff[i] = nums[i] - nums[i - 1]
+  }
+}
+
+DiffArray.prototype.increment = function(start, end, delta) {
+  this.diff[start] += delta
+
+  if (end + 1 < this.diff.length) {
+    this.diff[end] -= delta
+  }
+
+  return this
+}
+
+DiffArray.prototype.result = function() {
+  const res = [this.diff[0]]
+
+  for (let i = 1; i < this.diff.length; i++) {
+    res.push(this.diff[i] + res[i])
+  }
+
+  return res
+}
 ```
