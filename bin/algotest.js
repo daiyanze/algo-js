@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { LinkedList } = require('../utils')
+const { LinkedList, deepClone } = require('../utils')
 const path = require('path')
 
 const pArgs = process.argv.slice(2, process.argv.length)
@@ -28,7 +28,7 @@ for (let i = 0; i < tests.length; i++) {
     } else if (argTypes[j] == 'ListNode') {
       convertedArgs[i].push(new LinkedList(tests[i][j]))
     } else if (argTypes[j] == 'Array') {
-      convertedArgs[i].push(Array.from(tests[i][j]))
+      convertedArgs[i].push(deepClone(tests[i][j]))
     } else if (argTypes[j] == 'Object') {
       convertedArgs[i].push(Object.assign({}, tests[i][j]))
     } else {

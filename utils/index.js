@@ -1,4 +1,5 @@
 const { ListNode, LinkedList } = require('./linkedList')
+const { deepClone, deepCloneObject } = require('./clone.js')
 const {
   PriorityQueue,
   MinPriorityQueue,
@@ -13,5 +14,7 @@ global.MaxPriorityQueue = MaxPriorityQueue
 
 module.exports = {
   ListNode,
-  LinkedList
+  LinkedList,
+  deepClone,
+  deepCloneObject,
 }
