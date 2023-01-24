@@ -1,33 +1,27 @@
 # algo-js
-Leetcode data structure and algorithm practices in Javascript.
+Leetcode data structure and algorithm practices in Javascript. Made for those who'd like to run their code in local environments.
 
-## Study plan
+## Problems
 
-- Week 1
-  - [x] Linked-list
-  - [ ] Arrays
-- Week 2
-  - [ ] Graphs
-  - [ ] LRU/LFU
-- Week 3
-  - [ ] Binary Trees
-  - [ ] Binary Search Trees
-- Week 4
-  - [ ] Tries
-  - [ ] Heaps
-- Week 5
-  - [ ] Sorting
-  - [ ] Stacks
-  - [ ] Strings
-- Week 6
-  - [ ] Binary Search
-  - [ ] Sliding Window
-- Week 7
-  - [ ] BFS/DFS
-  - [ ] Backtracking
-- Week 8
-  - [ ] DP
-  - [ ] Greedy
+This repo will help you with the follow types of problems in LeetCode.
+
+- [x] Linked-list
+- [x] Arrays
+- [x] Binary Search
+- [x] Binary Trees
+- [ ] Graphs
+- [ ] LRU/LFU
+- [ ] Binary Search Trees
+- [ ] Tries
+- [ ] Heaps
+- [ ] Sorting
+- [ ] Stacks
+- [ ] Strings
+- [ ] Sliding Window
+- [ ] BFS/DFS
+- [ ] Backtracking
+- [ ] DP
+- [ ] Greedy
 
 ## Commands
 

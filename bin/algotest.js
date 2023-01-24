@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { LinkedList, deepClone } = require('../utils')
+const { LinkedList, BinaryTree, deepClone } = require('../utils')
 const path = require('path')
 
 const pArgs = process.argv.slice(2, process.argv.length)
@@ -27,6 +27,8 @@ for (let i = 0; i < tests.length; i++) {
       convertedArgs[i].push(list)
     } else if (argTypes[j] == 'ListNode') {
       convertedArgs[i].push(new LinkedList(tests[i][j]))
+    } else if (argTypes[j] == 'TreeNode') {
+      convertedArgs[i].push(tests[i][j].length ? new BinaryTree(tests[i][j]) : null)
     } else if (argTypes[j] == 'Array') {
       convertedArgs[i].push(deepClone(tests[i][j]))
     } else if (argTypes[j] == 'Object') {
@@ -56,7 +58,10 @@ for (let i = 0; i < tests.length; i++) {
 
     if (returnType == 'ListNode') {
       res = res ? res.toArray() : []
+    } else if (returnType == 'TreeNode') {
+      res = res ? res.toArray() : []
     }
+
     console.log()
     console.log('Output:')
     console.log(res)
