@@ -16,10 +16,49 @@ class TreeNode {
     let p = treeNode ? treeNode : this
 
     if (p) {
-      return this._inorderTraverse(p)
+      return this._levelOrderTraverse(p)
     }
 
     return []
+  }
+
+  _levelOrderTraverse(treeNode) {
+    let res = []
+    const queue = [treeNode]
+
+    while (queue.length) {
+      const len = queue.length
+      const cur = []
+
+      for (let i = 0; i < len; i++) {
+        const head = queue.shift()
+
+        if (!head) {
+          cur.push(null)
+          continue
+        }
+
+        cur.push(head.val)
+
+        if (head.left) {
+          queue.push(head.left)
+        } else {
+          queue.push(null)
+        }
+
+        if (head.right) {
+          queue.push(head.right)
+        } else {
+          queue.push(null)
+        }
+      }
+
+      if (queue.length) {
+        res = res.concat(cur)
+      }
+    }
+
+    return res
   }
 
   _inorderTraverse(treeNode) {
@@ -28,13 +67,25 @@ class TreeNode {
 
     const root = treeNode
 
-    function traverse() {
+    function traverse(root) {
+      if (!root) return
+
       traverse(root.left)
+
+      if (root.left) {
+        res.push(null)
+      }
+
       res.push(root.val)
+
+      if (root.right) {
+        res.push(null)
+      }
+
       traverse(root.right)
     }
 
-    traverse()
+    traverse(root)
 
     return res
   }

@@ -9,6 +9,8 @@ const {
 
 global.ListNode = ListNode
 global.LinkedList = LinkedList
+global.TreeNode = TreeNode
+global.BinaryTree = BinaryTree
 global.PriorityQueue = PriorityQueue
 global.MinPriorityQueue = MinPriorityQueue
 global.MaxPriorityQueue = MaxPriorityQueue

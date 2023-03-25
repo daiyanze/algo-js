@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { LinkedList, BinaryTree, deepClone } = require('../utils')
+const { LinkedList, BinaryTree, TreeNode, deepClone } = require('../utils')
 const path = require('path')
 
 const pArgs = process.argv.slice(2, process.argv.length)
@@ -28,7 +28,11 @@ for (let i = 0; i < tests.length; i++) {
     } else if (argTypes[j] == 'ListNode') {
       convertedArgs[i].push(new LinkedList(tests[i][j]))
     } else if (argTypes[j] == 'TreeNode') {
-      convertedArgs[i].push(tests[i][j].length ? new BinaryTree(tests[i][j]) : null)
+      if (Array.isArray(tests[i][j])) {
+        convertedArgs[i].push(tests[i][j].length ? new BinaryTree(tests[i][j]) : null)
+      } else if (typeof tests[i][j] == 'number') {
+        convertedArgs[i].push(new TreeNode(tests[i][j]))
+      }
     } else if (argTypes[j] == 'Array') {
       convertedArgs[i].push(deepClone(tests[i][j]))
     } else if (argTypes[j] == 'Object') {
@@ -46,8 +50,34 @@ for (let i = 0; i < tests.length; i++) {
 
   try {
     res = func(...convertedArgs[i])
-  } catch(e) {
+  } catch (e) {
     console.error(e)
+  }
+
+  if (returnType == 'ListNode') {
+    res = res ? res.toArray() : []
+  } else if (returnType == 'TreeNode') {
+    res = res ? res.toArray() : []
+  } else if (returnType == 'TreeNode[]') {
+    if (!res) {
+      res = []
+    } else {
+      const temp = []
+      for (let i of res) {
+        temp.push(i.toArray())
+      }
+      res = temp
+    }
+  } else if (returnType == 'void' && argTypes.includes('TreeNode')) {
+    for (const convertedArg of convertedArgs[i]) {
+      if (convertedArg instanceof TreeNode) {
+        res = convertedArg.toArray()
+      } else {
+        res = []
+      }
+    }
+  } else if (returnType == 'Number' && res instanceof TreeNode) {
+    res = res.val
   }
 
   if (res !== undefined) {
@@ -56,11 +86,6 @@ for (let i = 0; i < tests.length; i++) {
     console.log('Input:')
     tests[i].forEach(t => console.log(t))
 
-    if (returnType == 'ListNode') {
-      res = res ? res.toArray() : []
-    } else if (returnType == 'TreeNode') {
-      res = res ? res.toArray() : []
-    }
 
     console.log()
     console.log('Output:')
