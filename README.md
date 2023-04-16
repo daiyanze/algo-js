@@ -9,7 +9,7 @@ This repo will help you with the follow types of problems in LeetCode.
 - [x] Arrays
 - [x] Binary Search
 - [x] Binary Trees
-- [ ] Graphs
+- [x] Graphs
 - [ ] LRU/LFU
 - [ ] Binary Search Trees
 - [ ] Tries
