@@ -103,7 +103,7 @@ var getIntersectionNode = function(headA, headB) {
       steps++
     }
   }
-  
+
   while (p1 != p2) {
     p1 = p1.next
     p2 = p2.next
@@ -113,8 +113,8 @@ var getIntersectionNode = function(headA, headB) {
 };
 
 function ListNode(val, next) {
-  this.val = (val===undefined ? 0 : val)
-  this.next = (next===undefined ? null : next)
+  this.val = (val === undefined ? 0 : val)
+  this.next = (next === undefined ? null : next)
 }
 
 var node5 = new ListNode(5, null)
