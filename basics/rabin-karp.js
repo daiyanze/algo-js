@@ -33,11 +33,11 @@ function rabinKarpSearch(str, pat) {
     // Move in the right character
     windowHash = ((R * windowHash) % Q + str.charCodeAt(right)) % Q
     right++
-    
+
     if (right - left == pat.length) {
       // If current window hash value matches the "pat" hash value
       if (windowHash == RL) {
-        if (pat == str.substr(left, pat.length)) {
+        if (pat == str.substring(left, pat.length)) {
           return true
         }
       }
