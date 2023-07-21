@@ -7,17 +7,17 @@ This repo will help you with the follow types of problems in LeetCode.
 
 - [x] Linked-list
 - [x] Arrays
+  - [x] Sliding Window
 - [x] Binary Search
+  - [x] Binary Search Trees
 - [x] Binary Trees
 - [x] Graphs
-- [ ] LRU/LFU
-- [ ] Binary Search Trees
-- [ ] Tries
+- [x] LRU/LFU
+- [x] Tries
 - [ ] Heaps
 - [ ] Sorting
 - [ ] Stacks
 - [ ] Strings
-- [ ] Sliding Window
 - [ ] BFS/DFS
 - [ ] Backtracking
 - [ ] DP
